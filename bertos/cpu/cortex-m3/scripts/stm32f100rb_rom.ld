@@ -31,11 +31,17 @@
  * -->
  *
  * \author Andrea Scalise <andreascalo@gmail.com>
- * \author Matteo Silvestri <matteosilv@gmail.com>
+ * \Signed-off-by Matteo Silvestri <matteosilv@gmail.com>
  *
  * \brief Script for STM32VLDiscovery Cortex-M3 board.
  *
  */
+
+/*
+ * Define stack size here
+ * Variable used in the cortex-m3_rom.ld file
+ */
+STACK_SIZE = 0x400;
 
 /*
  * Define memory configuration for STM32F100RB
@@ -46,5 +52,5 @@ MEMORY
 	ram(rwx) : org = 0x20000000, len = 8k
 }
 
-INCLUDE "bertos/cpu/cortex-m3/scripts/cortex-m3_low-stack-size_rom.ld"
+INCLUDE "bertos/cpu/cortex-m3/scripts/cortex-m3_rom.ld"
 
